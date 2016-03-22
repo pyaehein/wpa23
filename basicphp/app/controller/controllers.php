@@ -103,11 +103,6 @@ function ProductController($action = null) {
 				$product_dept = $_POST['product_dept'];
 
 				$s_p_category = serialize($product_category);
-				//var_dump($s_p_category);
-				//var_dump($product_category);
-				//$s_p_category = unserialize($s_p_category);
-				//$arr_category = array_map('trim', $s_p_category);
-				//var_dump($arr_category);
 
 				$data = array(
 						'product_name'	=> $product_name,
@@ -119,11 +114,9 @@ function ProductController($action = null) {
 						'product_dept' => $product_dept
 				);
 
-				//var_dump($data);
-
 			    db_insert("products", $data);
 
-			   	//redirect("product");
+			   	redirect("product");
 			}
 
 			_product_createme();
